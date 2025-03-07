@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>SportzWorld Marketplace</h1>
+        <nav>
+            <button onclick="location.href='messaging.html'">Messages</button>
+            <button onclick="location.href='transactions.html'">Transactions</button>
+            <button onclick="location.href='userinfo.html'">User Info</button>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <!-- Profile Section -->
+        <div class="profile-section">
+            <div class="profile-header">
+                <img src="C:\Users\22349456\CS4116\ProfilePIC.webp" alt="Profile Picture" class="profile-picture">
+                <h1>JohnDoe27</h1>
+            </div>
+            <div class="profile-info">
+                <p><strong>Email:</strong> johndoe@outlook.com</p>
+                <p><strong>Phone Number:</strong> +353 87 123 4567</p>
+                <p><strong>Location:</strong> Co. Limerick, Ireland</p>
+                <p><strong>Interested in:</strong> Soccer, Basketball, Rugby</p>
+                <p><strong>About me:</strong> 22yo studying my undergrad in UL, looking for professional soccer
+                    coaching!</p>
+            </div>
+            <div class="profile-stats">
+                <p><strong>Total Competitions Attended:</strong> 0</p>
+                <p><strong>Total Purchases:</strong> 0</p>
+            </div>
+
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <h2>Competition History</h2>
+
+            <!-- Horizontal Slider -->
+            <div class="competition-slider">
+                <!-- Competition Item 1 -->
+                <div class="competition-item"
+                    onclick="openModal('Competition: May Soccer Trials', 'Host: Clare FC', 'Location: Ennis, Co. Clare', 'Date: 07/03/2025', 'Description: Soccer Trials held in May at Clare FC.')">
+                    <img src="C:\Users\22349456\CS4116\soccerPIC.jfif" alt="Soccer Trials">
+                    <h3>May Soccer Trials</h3>
+                </div>
+
+                <!-- Competition Item 2 -->
+                <div class="competition-item"
+                    onclick="openModal('Competition: Social Basketball', 'Host: UL Basketball Club' ,'Location: Castletroy, Co. Limerick', 'Date: 05/03/2025', 'Description: A social night out for casual basketball games.')">
+                    <img src="C:\Users\22349456\CS4116\basketballPIC.jfif" alt="Social Basketball">
+                    <h3>Social Basketball</h3>
+                </div>
+
+                <!-- Competition Item 3 -->
+                <div class="competition-item"
+                    onclick="openModal('Competition: 20km Limerick Charity Run', 'Host: Limerick Run Club' ,'Location: Castletroy, Co. Limerick', 'Date: 02/03/2025', 'Description: 20km run through castletroy for local charities.')">
+                    <img src="C:\Users\22349456\CS4116\runPIC.jfif" alt="Charity Run">
+                    <h3>20km Limerick Charity Run</h3>
+                </div>
+
+                <!-- Competition Item 4 -->
+                <div class="competition-item"
+                    onclick="openModal('Competition: Weekly social basketball', 'Host: UL Basketball Club' ,'Location: Castletroy, Co. Limerick', 'Date: 25/02/2025', 'Description: A social night out for casual basketball games.')">
+                    <img src="C:\Users\22349456\CS4116\basketballPIC.jfif" alt="Social Basketball">
+                    <h3>Competition 2 Title</h3>
+                </div>
+
+                <!-- Competition Item 5 -->
+                <div class="competition-item"
+                    onclick="openModal('Competition: Shamrocks Rugby Cup', 'Host: Limerick Shamrocks RFC' ,'Location: UL, Co. Limerick', 'Date: 20/02/2025', 'Description: Shamrocks Rugby Cup Group Stage Game 1')">
+                    <img src="C:\Users\22349456\CS4116\rugbyPIC.jfif" alt="Rugby match">
+                    <h3>Shamrocks Rugby Cup</h3>
+                </div>
+
+                <!-- Competition Item 6 -->
+                <div class="competition-item"
+                    onclick="openModal('Competition: Weekly social basketball', 'Host: UL Basketball Club' ,'Location: Castletroy, Co. Limerick', 'Date: 15/02/2025', 'Description: A social night out for casual basketball games.')">
+                    <img src="C:\Users\22349456\CS4116\basketballPIC.jfif" alt="Social Basketball">
+                    <h3>Social Basketball</h3>
+                </div>
+
+                <!-- Add more competition items as needed -->
+            </div>
+
+            <h2 class="transaction-history-heading">Transaction History</h2>
+            <div class="table-container">
+                <table class="transaction-table">
+                    <thead>
+                        <tr>
+                            <th>Host</th>
+                            <th>Date</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Row 1: May Soccer Trials -->
+                        <tr>
+                            <td>Clare FC</td>
+                            <td>07/03/2025</td>
+                            <td>May Soccer Trials Fee</td>
+                            <td>$20.00</td>
+                        </tr>
+
+                        <!-- Row 2: Social Basketball -->
+                        <tr>
+                            <td>UL Basketball Club</td>
+                            <td>05/03/2025</td>
+                            <td>Social Basketball Entry Fee</td>
+                            <td>$5.00</td>
+                        </tr>
+
+                        <!-- Row 3: 20km Limerick Charity Run -->
+                        <tr>
+                            <td>Limerick Run Club</td>
+                            <td>02/03/2025</td>
+                            <td>20km Charity Run Entry Fee</td>
+                            <td>$30.00</td>
+                        </tr>
+
+                        <!-- Row 4: Weekly Social Basketball -->
+                        <tr>
+                            <td>UL Basketball Club</td>
+                            <td>25/02/2025</td>
+                            <td>Social Basketball Fee</td>
+                            <td>$5.00</td>
+                        </tr>
+
+                        <!-- Row 5: Shamrocks Rugby Cup -->
+                        <tr>
+                            <td>Limerick Shamrocks RFC</td>
+                            <td>20/02/2025</td>
+                            <td>Shamrocks Rugby Cup Entry Fee</td>
+                            <td>$15.00</td>
+                        </tr>
+
+                        <!-- Row 6: Social Basketball -->
+                        <tr>
+                            <td>UL Basketball Club</td>
+                            <td>15/02/2025</td>
+                            <td>Social Basketball Entry Fee</td>
+                            <td>$5.00</td>
+                        </tr>
+
+                        <!-- Add more rows as needed -->
+                        <tr>
+                            <td>2025-03-01</td>
+                            <td>Competition Entry Fee</td>
+                            <td>$50.00</td>
+                        </tr>
+                        <tr>
+                            <td>2025-03-01</td>
+                            <td>Competition Entry Fee</td>
+                            <td>$50.00</td>
+                        </tr>
+                        <tr>
+                            <td>2025-03-01</td>
+                            <td>Competition Entry Fee</td>
+                            <td>$50.00</td>
+                        </tr>
+                        <tr>
+                            <td>2025-03-01</td>
+                            <td>Competition Entry Fee</td>
+                            <td>$50.00</td>
+                        </tr>
+                        <tr>
+                            <td>2025-03-01</td>
+                            <td>Competition Entry Fee</td>
+                            <td>$50.00</td>
+                        </tr>
+                        <tr>
+                            <td>2025-03-01</td>
+                            <td>Competition Entry Fee</td>
+                            <td>$50.00</td>
+                        </tr>
+                        <tr>
+                            <td>2025-03-01</td>
+                            <td>Competition Entry Fee</td>
+                            <td>$50.00</td>
+                        </tr>
+                        <tr>
+                            <td>2025-03-01</td>
+                            <td>Competition Entry Fee</td>
+                            <td>$50.00</td>
+                        </tr>
+                        <tr>
+                            <td>2025-03-01</td>
+                            <td>Competition Entry Fee</td>
+                            <td>$50.00</td>
+                        </tr>
+
+                        <!-- Add more rows as needed -->
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalHost"></p>
+            <p id="modalLocation"></p>
+            <p id="modalDate"></p>
+            <p id="modalDescription"></p>
+        </div>
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
