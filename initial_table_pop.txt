@@ -1,0 +1,208 @@
+--------------
+SELECT * FROM Businesses
+--------------
+
++------------+---------------------+------------------------------------------------------------------------------------------------------+-----------------------------+
+| businessID | name                | description                                                                                          | contactInfo                 |
++------------+---------------------+------------------------------------------------------------------------------------------------------+-----------------------------+
+|          1 | Soccer Starz        | Elite soccer training and field rentals for all ages. Improve skills or host games on top-tier turf! | soccerstarz@gmail.com       |
+|          2 | Amazing Athletics   | Track rentals, training plans, personalized coaching, equiptment & more!                             | amazingathletics@gmail.com  |
+|          3 | Supreme Swimmers    | Lane rentals, coaching services, lessons & more!                                                     | supremeswimmers@gmail.com   |
+|          4 | Limerick Golf Club  | Improve your game with top-quality golf rentals & expert training.                                   | limerickgolfclub@gmail.com  |
+|          5 | Limerick Hurling    | Train like a pro or rent top-quality gear with our Gaelic football training and rental service!      | gaelicfbgroup@gmail.com     |
+|          6 | Cycle Craft         | Expert cycling training & top rentals for all levels—ride stronger, faster, and with confidence!     | cyclecraft@gmail.com        |
+|          7 | Boxing Business     | Train like a pro! Rent top-quality boxing gear or book expert training sessions at our gym.          | boxingbusiness@gmail.com    |
+|          8 | All Star Gymnastics | Gymnastics training and rentals for all ages.                                                        | allstargymnastics@gmail.com |
+|          9 | Basketball Madness  | Elite basketball training and court rentals. Improve your game with top-tier facilities!             | basketballmadness@gmail.com |
+|         10 | Raging Rugby        | Rugby training & gear rentals for all levels. Improve skills, rent top equipment, and play harder!   | ragingrugby@gmail.com       |
++------------+---------------------+------------------------------------------------------------------------------------------------------+-----------------------------+
+--------------
+SELECT * FROM Users
+--------------
+
++--------+-----------+----------+------------+------------+
+| userID | firstName | lastName | username   | password   |
++--------+-----------+----------+------------+------------+
+|      1 | Ethan     | Cole     | ecole12    | ethanpass1 |
+|      2 | Sophia    | Ramirez  | sophiaR8   | sophiapass |
+|      3 | Liam      | Patel    | liam_p     | liampass12 |
+|      4 | Ava       | Thompson | avaT9      | avathopass |
+|      5 | Noah      | Sullivan | noahsully  | noahspass1 |
+|      6 | Isabella  | Chan     | izzychan01 | isabella12 |
+|      7 | Jacob     | Foster   | jfosty45   | jacobpass1 |
+|      8 | Maya      | Bennett  | mayarunz   | mayapass12 |
+|      9 | Caleb     | Wright   | cwright62  | calebpass1 |
+|     10 | Olivia    | Sanders  | livsandy3  | oliviapass |
++--------+-----------+----------+------------+------------+
+--------------
+SELECT * FROM Services
+--------------
+
++-----------+-------------------+----------------------------------------------------------------------------+------------+
+| serviceID | serviceName       | description                                                                | businessID |
++-----------+-------------------+----------------------------------------------------------------------------+------------+
+|         1 | Lessons           | Soccer lessons for groups & individuals.                                   |          1 |
+|         2 | Camps             | Soccer camps available during the off season.                              |          1 |
+|         3 | Equiptment Needs  | Purchase required soccer equipment.                                        |          1 |
+|         4 | Facility Rentals  | Rent facilities for 2 hours at a time.                                     |          1 |
+|         5 | Training Sessions | 2 hr group training sessions.                                              |          2 |
+|         6 | Coaching          | Personalized coaching plans and meetings.                                  |          2 |
+|         7 | Equipment Needs   | Purchase proper equipment for athletics.                                   |          2 |
+|         8 | Lane Rentals      | Rent lanes to train for swimming.                                          |          3 |
+|         9 | Coaching          | Personalized coaching plans and meetings.                                  |          3 |
+|        10 | Lessons           | Swimming lessons for groups & individuals.                                 |          3 |
+|        11 | Safety Training   | Get CPR certified or become a lifeguard.                                   |          3 |
+|        12 | Club Passes       | Gain access to our exclusive golf club.                                    |          4 |
+|        13 | Rentals           | Rent clubs, balls, and golf carts for the day.                             |          4 |
+|        14 | Coaching          | Personalized coaching plans and meetings.                                  |          5 |
+|        15 | Equipment         | Purchase the equipment you need to play hurling.                           |          5 |
+|        16 | Apparel           | Purchase team apparel needed for the season.                               |          5 |
+|        17 | Rentals           | Rent bikes to use any day of the week.                                     |          6 |
+|        18 | Leisure           | Join our bike tours & classes to stay active in a fun envirenment!         |          6 |
+|        19 | Training          | Get expert advice to curate training plans and sessions for you to attend. |          6 |
+|        20 | Repair            | All your bike repair needs offered by our business.                        |          6 |
+|        21 | Training          | 2 hr group training sessions.                                              |          7 |
+|        22 | Membership        | Gain access to our gym's facilities to train.                              |          7 |
+|        23 | Rentals           | Rent boxing equipment for the day here.                                    |          7 |
+|        24 | Classes           | Basic boxing classes and self defense courses for beginners.               |          7 |
+|        25 | Coaching          | Personalized coaching plans and meetings.                                  |          8 |
+|        26 | Team Sign-Up      | Sign up for our gym's competitive teams.                                   |          8 |
+|        27 | Sessions          | Come use our facilities for various time sessions.                         |          8 |
+|        28 | Events            | Host your birthday party or have a playdate in our trampoline gym.         |          8 |
+|        29 | Coaching          | Personalized coaching plans and meetings.                                  |          9 |
+|        30 | Training          | 2 hr group training sessions.                                              |          9 |
+|        31 | Facility Rentals  | Rent facilities for 2 hours at a time.                                     |          9 |
+|        32 | Apparel           | Purchase team apparel needed for the season.                               |          9 |
+|        33 | Coaching          | Personalized coaching plans and meetings.                                  |         10 |
+|        34 | Training          | 2 hr group training sessions.                                              |         10 |
+|        35 | Certifications    | Get certified to be a rugby coach or referee.                              |         10 |
+|        36 | Apparel           | Purchase team apparel needed for the season.                               |         10 |
++-----------+-------------------+----------------------------------------------------------------------------+------------+
+--------------
+SELECT * FROM Subservices
+--------------
+
++--------------+------------------------------+-----------------------------------------------------------------------------+---------+-----------+
+| subserviceID | subserviceName               | description                                                                 | cost    | serviceID |
++--------------+------------------------------+-----------------------------------------------------------------------------+---------+-----------+
+|            1 | One-on-One                   | Personalized training sessions tailored to your individual needs and goals. |   50.00 |         1 |
+|            2 | Group                        | Learn and improve your skills in a fun and interactive group setting.       |   25.00 |         1 |
+|            3 | Summer                       | Attend a 2 month soccer camp to compete & play with friends!                |  100.00 |         2 |
+|            4 | Winter                       | Attend a 2 month soccer camp to compete & play with friends!                |  100.00 |         2 |
+|            5 | Cleats                       | Purchase cleats in your desired size.                                       |   50.00 |         3 |
+|            6 | Shin Guards                  | Purchase shin guards in your desired size.                                  |   25.00 |         3 |
+|            7 | Full Field                   | 2 hr rental of a full soccer field.                                         |  500.00 |         4 |
+|            8 | Half Field                   | 2 hr rental of half a soccer field.                                         |  250.00 |         4 |
+|            9 | Sprinter Session             | 2 hr workout session with a coach.                                          |  150.00 |         5 |
+|           10 | Distance Session             | 2 hr workout session with a coach.                                          |  150.00 |         5 |
+|           11 | Jumper Session               | 2 hr workout session with a coach.                                          |  150.00 |         5 |
+|           12 | Thrower Session              | 2 hr workout session with a coach.                                          |  150.00 |         5 |
+|           13 | Season Training Plan         | Detailed training plan formulated for your specific goals.                  |  300.00 |         6 |
+|           14 | Seasonal Coach               | Weekly practice session for 3 months with a coach.                          |  300.00 |         6 |
+|           15 | Jogging Shoes                | Purchase shoes designed for daily runs in your size.                        |  150.00 |         7 |
+|           16 | Distance Racing Shoes        | Purchase shoes designed for distance races in your size.                    |  180.00 |         7 |
+|           17 | Sprinting Racing Shoes       | Purchase shoes designed for sprinting races in your size.                   |  180.00 |         7 |
+|           18 | Jumping Shoes                | Purchase shoes designed for jumping events in your size.                    |  180.00 |         7 |
+|           19 | Throwing Shoes               | Purchase shoes designed for throwing events in your size.                   |  180.00 |         7 |
+|           20 | 2 hr Lane Rental             | Rent one lane in a pool for 2 hours.                                        |   50.00 |         8 |
+|           21 | 4 hr Lane Rental             | Rent one lane in a pool for 4 hours.                                        |   50.00 |         8 |
+|           22 | Season Training Plan         | Detailed training plan formulated for your specific goals.                  |  300.00 |         9 |
+|           23 | Seasonal Coach               | Weekly practice session for 3 months with a coach.                          |  300.00 |         9 |
+|           24 | One-on-One                   | 2 hr individual swimming lesson with a trainer.                             |   50.00 |        10 |
+|           25 | Group                        | 2 hr group swimming lesson with a trainer.                                  |   25.00 |        10 |
+|           26 | CPR Certification            | Get CPR certified in a one day safety training class.                       |   50.00 |        11 |
+|           27 | Lifeguard Certification      | Become a lifeguard in our week long training program.                       |  150.00 |        11 |
+|           28 | 1 Yr Membership              | Gain access to our golf club facilities for 1 year.                         | 1000.00 |        12 |
+|           29 | 6 Month Membership           | Gain access to our golf club facilities for 6 months.                       |  600.00 |        12 |
+|           30 | 1 Day Pass                   | Acces our golf club facilities for one day.                                 |   50.00 |        12 |
+|           31 | Club Rental                  | Rent a set of golf clubs for the day.                                       |   30.00 |        13 |
+|           32 | Ball Rentals                 | Rent a basket of 15 golf balls for the day.                                 |   15.00 |        13 |
+|           33 | Cart Rental                  | Rent a golf cart for the day.                                               |  200.00 |        13 |
+|           34 | Season Training Plan         | Detailed training plan formulated for your specific goals.                  |  300.00 |        14 |
+|           35 | Seasonal Coach               | Weekly practice session for 3 months with a coach.                          |  300.00 |        14 |
+|           36 | Helmet                       | Buy a helmet for hurling.                                                   |   25.00 |        15 |
+|           37 | Hurley                       | Buy a hurley for hurling.                                                   |   25.00 |        15 |
+|           38 | Uniform                      | Purchase your hurling team's uniform.                                       |   30.00 |        16 |
+|           39 | Shorts                       | Purchase shorts for your uniform.                                           |   20.00 |        16 |
+|           40 | 6 hr Bike Rental             | Rent a bike for 6 hours.                                                    |   25.00 |        17 |
+|           41 | 1 Day Bike Rental            | Rent a bike for a day.                                                      |   50.00 |        17 |
+|           42 | Limerick City Bike Tour      | Enjoy a 4 hour group tour of Limerick City with a guide.                    |  100.00 |        18 |
+|           43 | Spin Class                   | Work out in a 2 hr class w/music and an instructor.                         |   50.00 |        18 |
+|           44 | Climber Session              | 2 hr workout session with a coach.                                          |  150.00 |        19 |
+|           45 | Sprinter Session             | 2 hr workout session with a coach.                                          |  150.00 |        19 |
+|           46 | Damage Assesment & Appraisal | Apppraisal service to help assess your bike's damage                        |   25.00 |         6 |
+|           47 | Full Bike Repair             | Replacement parts & repair service completed by an expert.                  |  150.00 |        20 |
+|           48 | Replacement Parts            | Purchase parts for your bike to replace yourself.                           |   50.00 |        20 |
+|           49 | Speed & Agility Session      | 2 hr workout session with a coach.                                          |  150.00 |        21 |
+|           50 | Skills Session               | 2 hr workout session with a coach.                                          |  150.00 |        21 |
+|           51 | Lifting Session              | 2 hr workout session with a coach.                                          |  150.00 |        21 |
+|           52 | 1 Month Membership           | Access our boxing gym & workout facilities for 1 month.                     |   50.00 |        22 |
+|           53 | 3 Month Membership           | Access our boxing gym & workout facilities for 3 months.                    |  130.00 |        22 |
+|           54 | 6 Month Membership           | Access our boxing gym & workout facilities for 6 months.                    |  250.00 |        22 |
+|           55 | 1 Year Membership            | Access our boxing gym & workout facilities for 1 year.                      |  450.00 |        22 |
+|           56 | Glove Rentals                | Rent boxing gloves for the day.                                             |   25.00 |        23 |
+|           57 | Ring Rentals                 | Rent a boxing ring for 2 hrs.                                               |  100.00 |        23 |
+|           58 | Self Defense Class           | Learn fighting skills for self defense.                                     |  100.00 |        24 |
+|           59 | Beginner Boxing Class        | Learn the basics of boxing before you commit to a membership.               |   75.00 |        24 |
+|           60 | Season Training Plan         | Detailed training plan formulated for your specific goals.                  |  300.00 |        25 |
+|           61 | Seasonal Coach               | Weekly practice session for 3 months with a coach.                          |  300.00 |        25 |
+|           62 | Travel Team                  | Join our travel team for 3 months to train & compete.                       |  500.00 |        26 |
+|           63 | Local Team                   | Join our local team for 3 months to train & compete.                        |  300.00 |        26 |
+|           64 | 2 hr Open Gym Session        | Come train in our facilities for 2 hrs.                                     |  100.00 |        27 |
+|           65 | 4 hr Open Gym Session        | Come train in our facilities for 4 hrs.                                     |  200.00 |        27 |
+|           66 | Birthday Party               | Host a 2 hr birthday party in our trampoline gym! Pizza included.           |  250.00 |        28 |
+|           67 | Trampoline Playdate          | Come play in our trampoline gym for 2 hrs.                                  |   50.00 |        28 |
+|           68 | Season Training Plan         | Detailed training plan formulated for your specific goals.                  |  300.00 |        29 |
+|           69 | Seasonal Coach               | Weekly practice session for 3 months with a coach.                          |  300.00 |        29 |
+|           70 | Speed & Agility Session      | 2 hr workout session with a coach.                                          |  150.00 |        30 |
+|           71 | Skills Session               | 2 hr workout session with a coach.                                          |  150.00 |        30 |
+|           72 | Lifting Session              | 2 hr workout session with a coach.                                          |  150.00 |        30 |
+|           73 | Open Court Session           | 2 hr session to access courts and practice individually.                    |   50.00 |        30 |
+|           74 | Half Court Rental            | Rent a half court for 2 hrs.                                                |  250.00 |        31 |
+|           75 | Full Court Rental            | Rent a full court for 2 hrs.                                                |  500.00 |        31 |
+|           76 | Season Training Plan         | Detailed training plan formulated for your specific goals.                  |  300.00 |        33 |
+|           77 | Seasonal Coach               | Weekly practice session for 3 months with a coach.                          |  300.00 |        33 |
+|           78 | Speed & Agility Session      | 2 hr workout session with a coach.                                          |  150.00 |        34 |
+|           79 | Skills Session               | 2 hr workout session with a coach.                                          |  150.00 |        34 |
+|           80 | Lifting Session              | 2 hr workout session with a coach.                                          |  150.00 |        34 |
+|           81 | Coaching Certification       | Get certified to become a rugby coach in a 6 hr class.                      |   50.00 |        35 |
+|           82 | Referee Certification        | Get certified to become a rugby referee in a 6 hr class.                    |   50.00 |        35 |
++--------------+------------------------------+-----------------------------------------------------------------------------+---------+-----------+
+--------------
+SELECT * FROM Competitions
+--------------
+
++--------+------------------------------------------+-----------------+------------+------------+
+| compID | compName                                 | sport           | type       | date       |
++--------+------------------------------------------+-----------------+------------+------------+
+|      1 | Limerick City Marathon                   | Athletics       | individual | 2025-05-01 |
+|      2 | Limerick City Soccer Tournament          | Soccer          | team       | 2025-05-10 |
+|      3 | Limerick City Swim Meet                  | Swimming        | individual | 2025-04-29 |
+|      4 | Limerick City Boxing Tournament          | Boxing          | individual | 2025-05-15 |
+|      5 | Tour of Limerick City                    | Cycling         | individual | 2025-05-09 |
+|      6 | Limerick City Basketball Tournament      | Basketball      | team       | 2025-06-08 |
+|      7 | Limerick City Gaelic Football Tournament | Gaelic Football | team       | 2025-05-21 |
+|      8 | Limerick City Golf Tournament            | Golf            | individual | 2025-05-13 |
+|      9 | Limerick City Gymnastics Meet            | Gymnastics      | individual | 2025-06-07 |
+|     10 | Limerick City Rugby Tournament           | Rugby           | team       | 2025-06-01 |
++--------+------------------------------------------+-----------------+------------+------------+
+--------------
+-- Will all be empty at the initialization of our website
+--------------
+
+--------------
+SELECT * FROM Transactions
+--------------
+
+--------------
+SELECT * FROM Reviews
+--------------
+
+--------------
+SELECT * FROM Participants
+--------------
+
+--------------
+SELECT * FROM Messages
+--------------
+

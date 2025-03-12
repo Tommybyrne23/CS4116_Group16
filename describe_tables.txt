@@ -1,0 +1,114 @@
+--------------
+DESCRIBE Businesses
+--------------
+
++-------------+--------------+------+-----+---------+----------------+
+| Field       | Type         | Null | Key | Default | Extra          |
++-------------+--------------+------+-----+---------+----------------+
+| businessID  | int          | NO   | PRI | NULL    | auto_increment |
+| name        | varchar(30)  | YES  |     | NULL    |                |
+| description | varchar(100) | YES  |     | NULL    |                |
+| contactInfo | varchar(50)  | YES  |     | NULL    |                |
++-------------+--------------+------+-----+---------+----------------+
+--------------
+DESCRIBE Users
+--------------
+
++-----------+-------------+------+-----+---------+----------------+
+| Field     | Type        | Null | Key | Default | Extra          |
++-----------+-------------+------+-----+---------+----------------+
+| userID    | int         | NO   | PRI | NULL    | auto_increment |
+| firstName | varchar(30) | YES  |     | NULL    |                |
+| lastName  | varchar(30) | YES  |     | NULL    |                |
+| username  | varchar(10) | YES  |     | NULL    |                |
+| password  | varchar(10) | YES  |     | NULL    |                |
++-----------+-------------+------+-----+---------+----------------+
+--------------
+DESCRIBE Services
+--------------
+
++-------------+--------------+------+-----+---------+----------------+
+| Field       | Type         | Null | Key | Default | Extra          |
++-------------+--------------+------+-----+---------+----------------+
+| serviceID   | int          | NO   | PRI | NULL    | auto_increment |
+| serviceName | varchar(30)  | YES  |     | NULL    |                |
+| description | varchar(100) | YES  |     | NULL    |                |
+| businessID  | int          | YES  | MUL | NULL    |                |
++-------------+--------------+------+-----+---------+----------------+
+--------------
+DESCRIBE Subservices
+--------------
+
++----------------+---------------+------+-----+---------+----------------+
+| Field          | Type          | Null | Key | Default | Extra          |
++----------------+---------------+------+-----+---------+----------------+
+| subserviceID   | int           | NO   | PRI | NULL    | auto_increment |
+| subserviceName | varchar(30)   | YES  |     | NULL    |                |
+| description    | varchar(100)  | YES  |     | NULL    |                |
+| cost           | decimal(10,2) | YES  |     | NULL    |                |
+| serviceID      | int           | YES  | MUL | NULL    |                |
++----------------+---------------+------+-----+---------+----------------+
+--------------
+DESCRIBE Transactions
+--------------
+
++---------------+------+------+-----+---------+----------------+
+| Field         | Type | Null | Key | Default | Extra          |
++---------------+------+------+-----+---------+----------------+
+| transactionID | int  | NO   | PRI | NULL    | auto_increment |
+| userID        | int  | YES  | MUL | NULL    |                |
+| businessID    | int  | YES  | MUL | NULL    |                |
+| serviceID     | int  | YES  | MUL | NULL    |                |
+| subserviceID  | int  | YES  | MUL | NULL    |                |
++---------------+------+------+-----+---------+----------------+
+--------------
+DESCRIBE Reviews
+--------------
+
++--------------+---------------------------+------+-----+---------+----------------+
+| Field        | Type                      | Null | Key | Default | Extra          |
++--------------+---------------------------+------+-----+---------+----------------+
+| reviewID     | int                       | NO   | PRI | NULL    | auto_increment |
+| userID       | int                       | YES  | MUL | NULL    |                |
+| businessID   | int                       | YES  | MUL | NULL    |                |
+| serviceID    | int                       | YES  | MUL | NULL    |                |
+| subserviceID | int                       | YES  | MUL | NULL    |                |
+| rating       | enum('1','2','3','4','5') | YES  |     | NULL    |                |
+| comment      | varchar(100)              | YES  |     | NULL    |                |
++--------------+---------------------------+------+-----+---------+----------------+
+--------------
+DESCRIBE Competitions
+--------------
+
++----------+---------------------------+------+-----+---------+----------------+
+| Field    | Type                      | Null | Key | Default | Extra          |
++----------+---------------------------+------+-----+---------+----------------+
+| compID   | int                       | NO   | PRI | NULL    | auto_increment |
+| compName | varchar(50)               | YES  |     | NULL    |                |
+| sport    | varchar(30)               | YES  |     | NULL    |                |
+| type     | enum('team','individual') | YES  |     | NULL    |                |
+| date     | date                      | YES  |     | NULL    |                |
++----------+---------------------------+------+-----+---------+----------------+
+--------------
+DESCRIBE Participants
+--------------
+
++--------+------+------+-----+---------+-------+
+| Field  | Type | Null | Key | Default | Extra |
++--------+------+------+-----+---------+-------+
+| userID | int  | NO   | PRI | NULL    |       |
+| compID | int  | YES  | MUL | NULL    |       |
++--------+------+------+-----+---------+-------+
+--------------
+DESCRIBE Messages
+--------------
+
++------------+-------------------------+------+-----+---------+----------------+
+| Field      | Type                    | Null | Key | Default | Extra          |
++------------+-------------------------+------+-----+---------+----------------+
+| messageID  | int                     | NO   | PRI | NULL    | auto_increment |
+| userID     | int                     | YES  | MUL | NULL    |                |
+| businessID | int                     | YES  | MUL | NULL    |                |
+| message    | varchar(100)            | YES  |     | NULL    |                |
+| sender     | enum('user','business') | YES  |     | NULL    |                |
++------------+-------------------------+------+-----+---------+----------------+

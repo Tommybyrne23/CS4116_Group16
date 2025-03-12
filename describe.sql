@@ -1,0 +1,9 @@
+DESCRIBE Businesses;
+DESCRIBE Users;
+DESCRIBE Services;
+DESCRIBE Subservices;
+DESCRIBE Transactions;
+DESCRIBE Reviews;
+DESCRIBE Competitions;
+DESCRIBE Participants;
+DESCRIBE Messages;
