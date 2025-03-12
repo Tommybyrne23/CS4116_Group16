@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportzWorld - Sales History</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav button {  /* Style for the buttons */
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        nav button:hover {
+            background-color: #333;
+        }
+
+        .main-content {
+            padding: 20px;
+        }
+
+        h1.service-page-heading {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SportzWorld Marketplace</h1>
+        <nav>
+            <button onclick="location.href='business_home.html'">Home</button> 
+            <button onclick="location.href='business_messaging.html'">Messages</button> 
+        </nav>
+    </header>
+
+    <div class="main-content">
+        <h1 class="service-page-heading">Sales History</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Customer Name</th>
+                    <th>Service</th>
+                    <th>Subservice</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>John Doe</td>
+                    <td>Lessons</td>
+                    <td>One-on-One Lessons</td>
+                    <td>€50</td>
+                </tr>
+                <tr>
+                    <td>Jane Smith</td>
+                    <td>Rentals</td>
+                    <td>Field Rental- 2 hrs</td>
+                    <td>€250</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

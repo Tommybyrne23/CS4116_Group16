@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportzWorld - Admin Profile</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header { /* Added header styles */
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .main-content {
+            display: flex;
+            padding: 20px;
+        }
+
+        .section {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        h1.service-page-heading {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f0f0f0;
+        }
+
+        .ban-button {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .ban-button:hover {
+            background-color: #c82333;
+        }
+
+        .delete-button {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .delete-button:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SportzWorld Marketplace- Admin</h1>
+    </header>
+
+    <div class="main-content">
+        <div class="section">
+            <h1 class="service-page-heading">User Management</h1>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>johndoe123</td>
+                        <td><button class="ban-button" onclick="banUser('johndoe123')">Ban</button></td>
+                    </tr>
+                    <tr>
+                        <td>janesmith456</td>
+                        <td><button class="ban-button" onclick="banUser('janesmith456')">Ban</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h1 class="service-page-heading">Review Management</h1>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Review Text</th>
+                        <th>User</th>
+                        <th>Business</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Great service!</td>
+                        <td>johndoe123</td>
+                        <td>Soccer Starz</td>
+                        <td><button class="delete-button" onclick="deleteReview('review1')">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>Very helpful staff.</td>
+                        <td>janesmith456</td>
+                        <td>Limerick Sports Academy</td>
+                        <td><button class="delete-button" onclick="deleteReview('review2')">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function banUser(username) {
+            // Replace this with your actual user banning logic
+            alert(`Banning user: ${username}`);
+        }
+
+        function deleteReview(reviewId) {
+            // Replace this with your actual review deleting logic
+            alert(`Deleting review: ${reviewId}`);
+        }
+    </script>
+</body>
+</html>

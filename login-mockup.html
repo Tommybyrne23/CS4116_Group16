@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportzWorld - User Sign Up/Login</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav button {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .main-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1.service-page-heading {
+            text-align: center;
+        }
+
+        .user-form {
+            width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .user-form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .user-form input[type="text"],
+        .user-form input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+
+        .user-form button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .user-form button:hover {
+            background-color: #0056b3;
+        }
+
+        .form-toggle {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .form-toggle a {
+            text-decoration: none;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SportzWorld Marketplace</h1>
+        <nav>
+            <button onclick="location.href='index.html'">Home</button>
+            <button onclick="location.href='messaging.html'">Messages</button>
+            <button onclick="location.href='transactions.html'">Transactions</button>
+            <button onclick="location.href='userinfo.html'">User Info</button>
+        </nav>
+    </header>
+
+    <div class="main-content">
+        <h1 class="service-page-heading" id="formTitle">Sign Up</h1>
+
+        <form class="user-form" id="userForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="button" onclick="submitForm()">Submit</button>
+        </form>
+
+        <div class="form-toggle">
+            <a href="#" id="toggleLink" onclick="toggleForm()">Already have an account? Log in</a>
+        </div>
+    </div>
+
+    <script>
+        let isLogin = false;
+
+        function toggleForm() {
+            isLogin = !isLogin;
+            const formTitle = document.getElementById("formTitle");
+            const toggleLink = document.getElementById("toggleLink");
+
+            if (isLogin) {
+                formTitle.textContent = "Log In";
+                toggleLink.textContent = "Don't have an account? Sign up";
+            } else {
+                formTitle.textContent = "Sign Up";
+                toggleLink.textContent = "Already have an account? Log in";
+            }
+
+            // You might need to adjust form fields for login/signup
+        }
+
+        function submitForm() {
+            // Simulate form submission (replace with actual backend logic)
+            if (isLogin) {
+                alert("Login submitted!");
+            } else {
+                alert("Sign up submitted!");
+            }
+            // Add actual form submission logic here
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportzWorld - Business Messaging</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        header a {  /* Style for the links */
+            background-color: #555;
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            margin-left: 10px;
+            cursor: pointer;
+            border: none; 
+        }
+
+        header a:hover {
+            background-color: #333;
+        }
+
+        .main-content {
+            padding: 20px;
+        }
+
+        h1.service-page-heading {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f0f0f0;
+        }
+
+        .message-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .message-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SportzWorld Marketplace</h1>
+        <a href="business_home.html">Home</a> </header>
+
+    <div class="main-content">
+        <h1 class="service-page-heading">Messaging</h1>
+
+        <h2>Customers</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Customer Name</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>John Doe</td>
+                    <td><button class="message-button" onclick="sendMessage('John Doe')">Message</button></td>
+                </tr>
+                <tr>
+                    <td>Jane Smith</td>
+                    <td><button class="message-button" onclick="sendMessage('Jane Smith')">Message</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Inquiries</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Customer Name</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Alice Johnson</td>
+                    <td><button class="message-button" onclick="sendMessage('Alice Johnson')">Respond to Inquiry</button></td>
+                </tr>
+                <tr>
+                    <td>Bob Williams</td>
+                    <td><button class="message-button" onclick="sendMessage('Bob Williams')">Respond to Inquiry</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function sendMessage(recipient) {
+            // Replace this with your actual messaging logic
+            alert(`Sending message to ${recipient}...`);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportzWorld - Transaction</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav button {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .main-content {
+            padding: 20px;
+        }
+
+        h1.service-page-heading {
+            text-align: center;
+        }
+
+        .transaction-form {
+            width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .transaction-form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .transaction-form input[type="text"],
+        .transaction-form input[type="number"],
+        .transaction-form select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+
+        .transaction-form .button-container {
+            text-align: center;
+        }
+
+        .transaction-form button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .transaction-form button:hover {
+            background-color: #0056b3;
+        }
+
+        .review-button {
+            display: none;
+            margin: 20px auto;
+            background-color: #28a745;
+            display: block;
+            width: fit-content;
+        }
+
+        .review-button:hover{
+            background-color: #218838;
+        }
+
+        #totalPrice {
+            text-align: center;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SportzWorld Marketplace</h1>
+        <nav>
+            <button onclick="location.href='index.html'">Home</button>
+            <button onclick="location.href='messaging.html'">Messages</button>
+            <button onclick="location.href='transactions.html'">Transactions</button>
+            <button onclick="location.href='userinfo.html'">User Info</button>
+        </nav>
+    </header>
+
+    <div class="main-content">
+        <h1 class="service-page-heading">Purchase Service</h1>
+
+        <div id="totalPrice">Total: €0.00</div>
+
+        <form class="transaction-form" id="transactionForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="cardNumber">Card Number:</label>
+            <input type="number" id="cardNumber" name="cardNumber" required>
+
+            <label for="service">Select Service:</label>
+            <select id="service" name="service" required onchange="updateSubservices()">
+                <option value="">--Please choose a service--</option>
+                <option value="lessons">Lessons</option>
+                <option value="camps">Camps</option>
+                <option value="equipment">Equipment Needs</option>
+                <option value="rentals">Facility Rentals</option>
+            </select>
+
+            <label for="subservice">Select Sub-Service:</label>
+            <select id="subservice" name="subservice" required onchange="calculateTotal()">
+                <option value="">--Please choose a sub-service--</option>
+            </select>
+
+            <div class="button-container">
+                <button type="button" onclick="completePurchase()">Complete Purchase</button>
+            </div>
+        </form>
+
+        <button class="review-button" id="reviewButton" onclick="location.href='review.html'">Leave a Review</button>
+    </div>
+
+    <script>
+        const subservices = {
+            lessons: [
+                { name: "One-on-One Lessons", price: 50 },
+                { name: "Group Lessons", price: 25 }
+            ],
+            camps: [
+                { name: "Summer Camp", price: 200 },
+                { name: "Winter Camp", price: 150 }
+            ],
+            equipment: [
+                { name: "Soccer Ball", price: 20 },
+                { name: "Soccer Shoes", price: 60 }
+            ],
+            rentals: [
+                { name: "Half Field Rental", price: 100 },
+                { name: "Full Field Rental", price: 180 }
+            ]
+        };
+
+        function updateSubservices() {
+            const service = document.getElementById("service").value;
+            const subserviceSelect = document.getElementById("subservice");
+            subserviceSelect.innerHTML = '<option value="">--Please choose a sub-service--</option>';
+
+            if (service && subservices[service]) {
+                subservices[service].forEach(item => {
+                    const option = document.createElement("option");
+                    option.value = item.name;
+                    option.textContent = `${item.name} (€${item.price})`;
+                    subserviceSelect.appendChild(option);
+                });
+            }
+            calculateTotal();
+        }
+
+        function calculateTotal() {
+            const service = document.getElementById("service").value;
+            const subserviceName = document.getElementById("subservice").value;
+            let total = 0;
+
+            if (service && subserviceName && subservices[service]) {
+                const selectedSubservice = subservices[service].find(item => item.name === subserviceName);
+                if (selectedSubservice) {
+                    total = selectedSubservice.price;
+                }
+            }
+
+            document.getElementById("totalPrice").textContent = `Total: €${total.toFixed(2)}`;
+        }
+
+        function completePurchase() {
+            alert("Purchase completed!");
+            document.getElementById("reviewButton").style.display = "block";
+            document.getElementById("transactionForm").style.display = "none";
+        }
+    </script>
+</body>
+</html>

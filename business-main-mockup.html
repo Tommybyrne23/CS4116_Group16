@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportzWorld - Business Home</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav button {  /* Style for the buttons */
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        nav button:hover {
+            background-color: #333;
+        }
+
+        .main-content {
+            padding: 20px;
+        }
+
+        h1.service-page-heading {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f0f0f0;
+        }
+
+        .add-button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-button:hover {
+            background-color: #218838;
+        }
+
+        .delete-button {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .delete-button:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SportzWorld Marketplace</h1>
+        <nav>
+            <button onclick="location.href='business_home.html'">Home</button> 
+            <button onclick="location.href='business_messaging.html'">Messages</button>
+            <button onclick="location.href='sales_history.html'">Sales History</button> 
+        </nav>
+    </header>
+
+    <div class="main-content">
+        <h1 class="service-page-heading">Soccer Starz Home</h1>
+
+        <h2>Services</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Service Name</th>
+                    <th>Action</th> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Lessons</td>
+                    <td><button class="delete-button" onclick="deleteService('Lessons')">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Camps</td>
+                    <td><button class="delete-button" onclick="deleteService('Camps')">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Equipment Needs</td>
+                    <td><button class="delete-button" onclick="deleteService('Equipment Needs')">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Facility Rentals</td>
+                    <td><button class="delete-button" onclick="deleteService('Facility Rentals')">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="add-button" onclick="addService()">Add Service</button>
+
+        <h2>Subservices</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Subservice Name</th>
+                    <th>Service</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>One-on-One Lessons</td>
+                    <td>Lessons</td>
+                    <td>Personalized training sessions tailored to your needs and goals.</td>
+                    <td>€50</td>
+                    <td><button class="delete-button" onclick="deleteSubService('One-on-One Lessons')">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Group Lessons</td>
+                    <td>Lessons</td>
+                    <td>Learn and improve your skills in a fun and interactive group setting.</td>
+                    <td>€25</td>
+                    <td><button class="delete-button" onclick="deleteSubService('Group Lessons')">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Field Rental- 2 hrs</td>
+                    <td>Rentals</td>
+                    <td>Rent a field at the Soccer Starz facility for 2 hours.</td>
+                    <td>€250</td>
+                    <td><button class="delete-button" onclick="deleteSubService('Field Rental- 2 hrs')">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="add-button" onclick="addSubservice()">Add Subservice</button>
+    </div>
+
+    <script>
+        function addService() {
+            // Replace this with your actual service adding logic
+            alert("Adding new service...");
+        }
+
+        function addSubservice() {
+            // Replace this with your actual subservice adding logic
+            alert("Adding new subservice...");
+        }
+
+        function deleteService(serviceName) {
+            // Replace this with your actual service deleting logic
+            alert(`Deleting service: ${serviceName}`);
+        }
+    </script>
+</body>
+</html>

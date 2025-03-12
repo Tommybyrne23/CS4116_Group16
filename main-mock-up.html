@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportzWorld Marketplace</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav button {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: #f0f0f0; /* Optional: Add background color */
+        }
+
+        .search-bar input[type="text"] {
+            padding: 8px;
+            border: 1px solid #ddd;
+            flex-grow: 1; /* Make input expand to fill available space */
+            margin-right: 10px;
+        }
+
+        .search-bar button {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+
+        .main-content {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); /* 5 columns for 10 businesses */
+            gap: 20px;
+        }
+
+        .business-item {
+            text-align: center;
+            border: 1px solid #ddd;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .business-item img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SportzWorld Marketplace</h1>
+        <nav>
+            <button onclick="location.href='messaging.html'">Messages</button>
+            <button onclick="location.href='transactions.html'">Transactions</button>
+            <button onclick="location.href='userinfo.html'">User Info</button>
+        </nav>
+    </header>
+
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search businesses...">
+        <button onclick="searchBusinesses()">Search</button>
+    </div>
+
+    <div class="main-content">
+        <div class="business-item" onclick="location.href='business_details.html?id=1'">
+            <img src="https://assets.bizclikmedia.net/900/ae6b6628be6c1a091f59ab494861e4eb:c8ec3d599106995effd61ed59c7f6418/article-im2219-soccer-ball-jpeg.webp" alt="Business 1">
+            <h3>Soccer Starz</h3>
+        </div>
+        <div class="business-item" onclick="location.href='business_details.html?id=2'">
+            <img src="https://dehayf5mhw1h7.cloudfront.net/wp-content/uploads/sites/1074/2019/03/13161549/track-and-field.jpg" alt="Business 2">
+            <h3>Amazing Athletics</h3>
+        </div>
+        <div class="business-item" onclick="location.href='business_details.html?id=3'">
+            <img src="https://serapool.fra1.cdn.digitaloceanspaces.com/media/6449/1714117788510.png" alt="Business 3">
+            <h3>Supreme Swimmers</h3>
+        </div>
+        <div class="business-item" onclick="location.href='business_details.html?id=4'">
+            <img src="https://cdn.britannica.com/40/162540-050-1D07AA68/Golf-course-park-district-activity.jpg" alt="Business 4">
+            <h3>The Golf Club</h3>
+        </div>
+        <div class="business-item" onclick="location.href='business_details.html?id=5'">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Aidan_O%27Mahony_%26_Eoin_Bradley.jpg/640px-Aidan_O%27Mahony_%26_Eoin_Bradley.jpg" alt="Business 5">
+            <h3>Gaelic Football Greatness</h3>
+        </div>
+        <div class="business-item" onclick="location.href='business_details.html?id=6'">
+            <img src="https://res.cloudinary.com/team-sky/image/upload/c_auto,g_north,w_980,ar_4:3,q_90,f_auto/umbraco-cms/media/14wkmz1v/rutast3_turnersprintcarousel.jpg" alt="Business 6">
+            <h3>Cycle Craft</h3>
+        </div>
+        <div class="business-item" onclick="location.href='business_details.html?id=7'">
+            <img src="https://img.olympics.com/images/image/private/t_s_pog_staticContent_hero_xl_2x/f_auto/primary/dyzftci4wvroohbg4tnq" alt="Business 7">
+            <h3>Boxing Business</h3>
+        </div>
+        <div class="business-item" onclick="location.href='business_details.html?id=8'">
+            <img src="https://media.newyorker.com/photos/590979351c7a8e33fb38fd1c/master/pass/Wiedeman-HowToReallyWatchOlympicGymnastics.jpg" alt="Business 8">
+            <h3>All Star Gymnastics</h3>
+        </div>
+        <div class="business-item" onclick="location.href='business_details.html?id=9'">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMGDU4tVKkWwmBjCzmKx4ZPi8ph3A77fuQfg&s" alt="Business 9">
+            <h3>Basketball Madness</h3>
+        </div>
+        <div class="business-item" onclick="location.href='business_details.html?id=10'">
+            <img src="https://www.thetimes.com/imageserver/image/%2F553eeae7-a7ae-4b2a-b1a8-404eb3afe547.jpg?crop=3375%2C2250%2C1004%2C588&resize=750" alt="Business 10">
+            <h3>Raging Rugby</h3>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add JavaScript to handle dynamic content or interactions
+    </script>
+</body>
+</html>

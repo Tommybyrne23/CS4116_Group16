@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soccer Starz Services</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav button {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .service-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .service-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .service-button:hover {
+            background-color: #0056b3;
+        }
+
+        .main-content {
+            padding: 20px;
+        }
+
+        h1.service-page-heading { /* Added a class for the heading */
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SportzWorld Marketplace</h1>
+        <nav>
+            <button onclick="location.href='index.html'">Home</button>
+            <button onclick="location.href='messaging.html'">Messages</button>
+            <button onclick="location.href='transactions.html'">Transactions</button>
+            <button onclick="location.href='userinfo.html'">User Info</button>
+        </nav>
+    </header>
+
+    <div class="main-content">
+        <h1 class="service-page-heading">Soccer Starz Services</h1>  <div class="service-buttons">
+            <button class="service-button" onclick="location.href='lessons.html'">Lessons</button>
+            <button class="service-button" onclick="location.href='camps.html'">Camps</button>
+            <button class="service-button" onclick="location.href='equipment.html'">Equipment Needs</button>
+            <button class="service-button" onclick="location.href='rentals.html'">Facility Rentals</button>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add JavaScript for dynamic functionality
+    </script>
+</body>
+</html>

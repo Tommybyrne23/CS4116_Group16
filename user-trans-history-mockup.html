@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportzWorld - Transaction History</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav button {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .main-content {
+            display: flex;
+            padding: 20px;
+        }
+
+        .sidebar {
+            width: 200px;
+            margin-right: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar a {
+            display: block;
+            background-color: #555;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            background-color: #333;
+        }
+
+        .transaction-history {
+            flex-grow: 1;
+        }
+
+        .transaction-history h2 {
+            margin-bottom: 10px;
+        }
+
+        .transaction-list {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .transaction-list th,
+        .transaction-list td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .transaction-list th {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SportzWorld Marketplace</h1>
+        <nav>
+            <button onclick="location.href='index.html'">Home</button>
+            <button onclick="location.href='messaging.html'">Messages</button>
+            <button onclick="location.href='transactions.html'">Transactions</button>
+            <button onclick="location.href='userinfo.html'">User Info</button>
+        </nav>
+    </header>
+
+    <div class="main-content">
+        <div class="sidebar">
+            <ul>
+                <li><a href="userinfo.html">User Info</a></li>
+                <li><a href="transaction_history.html">Transaction History</a></li>
+                <li><a href="competition_history.html">Competition History</a></li>
+            </ul>
+        </div>
+
+        <div class="transaction-history">
+            <h2>Transaction History</h2>
+
+            <table class="transaction-list">
+                <thead>
+                    <tr>
+                        <th>Business</th>
+                        <th>Service</th>
+                        <th>Subservice</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Soccer Starz</td>
+                        <td>Lessons</td>
+                        <td>One-on-One Lessons</td>
+                        <td>€50</td>
+                    </tr>
+                    <tr>
+                        <td>Cycle Craft</td>
+                        <td>Replacement</td>
+                        <td>Front Tire Replacement</td>
+                        <td>€80</td>
+                    </tr>
+                    <tr>
+                        <td>Supreme Swimmers</td>
+                        <td>Lane Rentals</td>
+                        <td>1 hr Lane Rental</td>
+                        <td>€50</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

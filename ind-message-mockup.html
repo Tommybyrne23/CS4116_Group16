@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportzWorld - Message with [Recipient Name]</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav button {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .main-content {
+            padding: 20px;
+        }
+
+        h1.service-page-heading {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .message-history {
+            border: 1px solid #ddd;
+            padding: 10px;
+            height: 300px;
+            overflow-y: scroll;
+            margin-bottom: 10px;
+        }
+
+        .message {
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 5px;
+        }
+
+        .user-message {
+            background-color: #e9ecef;
+            text-align: right;
+        }
+
+        .other-message {
+            background-color: #f8f9fa;
+            text-align: left;
+        }
+
+        .message-form {
+            display: flex;
+        }
+
+        .message-form input[type="text"] {
+            flex-grow: 1;
+            padding: 8px;
+            border: 1px solid #ddd;
+            margin-right: 10px;
+        }
+
+        .message-form button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .message-form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SportzWorld Marketplace</h1>
+        <nav>
+            <button onclick="location.href='index.html'">Home</button>
+            <button onclick="location.href='messaging.html'">Messages</button>
+            <button onclick="location.href='transactions.html'">Transactions</button>
+            <button onclick="location.href='userinfo.html'">User Info</button>
+        </nav>
+    </header>
+
+    <div class="main-content">
+        <h1 class="service-page-heading">Message with [Recipient Name]</h1>
+
+        <div class="message-history" id="messageHistory">
+            <div class="message other-message">[Recipient Name]: Hello! How can I help you?</div>
+            <div class="message user-message">User: Hi, I'm interested in learning more about your services.</div>
+            
+            </div>
+
+        <form class="message-form" id="messageForm">
+            <input type="text" id="newMessage" placeholder="Type your message...">
+            <button type="button" onclick="sendMessage()">Send</button>
+        </form>
+    </div>
+
+    <script>
+        function sendMessage() {
+            const messageInput = document.getElementById("newMessage");
+            const messageHistory = document.getElementById("messageHistory");
+            const newMessage = messageInput.value;
+
+            if (newMessage.trim() !== "") {
+                const userMessage = document.createElement("div");
+                userMessage.classList.add("message", "user-message");
+                userMessage.textContent = "User: " + newMessage;
+                messageHistory.appendChild(userMessage);
+
+                // Here you would typically send the message to the server
+                // and then display the recipient's response in the message history
+
+                messageInput.value = ""; // Clear the input field
+            }
+        }
+    </script>
+</body>
+</html>

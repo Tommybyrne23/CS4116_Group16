@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportzWorld - Competitions</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav button {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: #f0f0f0;
+        }
+
+        .search-bar input[type="text"] {
+            padding: 8px;
+            border: 1px solid #ddd;
+            flex-grow: 1;
+            margin-right: 10px;
+        }
+
+        .search-bar button {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+
+        .main-content {
+            padding: 20px;
+        }
+
+        h1.service-page-heading {
+            text-align: center;
+        }
+
+        .competition-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .competition-item {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .competition-details {
+            flex-grow: 1;
+        }
+
+        .signup-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .signup-button:hover {
+            background-color: #0056b3;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .status-full {
+            color: red;
+            font-weight: bold;
+        }
+
+        .status-open {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SportzWorld Marketplace</h1>
+        <nav>
+            <button onclick="location.href='index.html'">Home</button>
+            <button onclick="location.href='messaging.html'">Messages</button>
+            <button onclick="location.href='transactions.html'">Transactions</button>
+            <button onclick="location.href='userinfo.html'">User Info</button>
+        </nav>
+    </header>
+
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search competitions...">
+        <button onclick="searchCompetitions()">Search</button>
+    </div>
+
+    <div class="main-content">
+        <h1 class="service-page-heading">Upcoming Competitions</h1>
+
+        <ul class="competition-list" id="competitionList">
+            <li class="competition-item" data-name="Limerick City Marathon" data-date="2024-10-27" data-sport="Running" data-status="open">
+                <div class="competition-details">
+                    <h3>Limerick City Marathon</h3>
+                    <p>Date: 2024-10-27</p>
+                    <p>Location: Limerick City</p>
+                    <p>Sport: Running</p>
+                    <p>Status: <span class="status-open">Open</span></p>
+                </div>
+                <button class="signup-button" onclick="location.href='signup_marathon.html'">Sign Up</button>
+            </li>
+            <li class="competition-item" data-name="County Limerick Soccer Tournament" data-date="2024-11-15" data-sport="Soccer" data-status="full">
+                <div class="competition-details">
+                    <h3>County Limerick Soccer Tournament</h3>
+                    <p>Date: 2024-11-15</p>
+                    <p>Location: Various Locations</p>
+                    <p>Sport: Soccer</p>
+                    <p>Status: <span class="status-full">Full</span></p>
+                </div>
+                <button class="signup-button" onclick="location.href='signup_soccer.html'">Sign Up</button>
+            </li>
+            <li class="competition-item" data-name="Limerick Rowing Regatta" data-date="2024-12-05" data-sport="Rowing" data-status="open">
+                <div class="competition-details">
+                    <h3>Limerick Rowing Regatta</h3>
+                    <p>Date: 2024-12-05</p>
+                    <p>Location: River Shannon</p>
+                    <p>Sport: Rowing</p>
+                    <p>Status: <span class="status-open">Open</span></p>
+                </div>
+                <button class="signup-button" onclick="location.href='signup_rowing.html'">Sign Up</button>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        function searchCompetitions() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const competitionItems = document.querySelectorAll('.competition-item');
+
+            competitionItems.forEach(item => {
+                const competitionName = item.dataset.name.toLowerCase();
+                const competitionDate = item.dataset.date.toLowerCase();
+                const competitionSport = item.dataset.sport.toLowerCase();
+
+                if (competitionName.includes(searchTerm) || competitionDate.includes(searchTerm) || competitionSport.includes(searchTerm)) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
