@@ -419,4 +419,114 @@ function getBusinessSubservices($conn, $businessID) {
     return $subservices;
 }
 
+//Sales history function below
+function getSalesHistory($conn, $businessID) {
+    $sql = "SELECT u.firstName AS customerName, s.serviceName, ss.subserviceName, ss.cost
+            FROM Transactions t
+            JOIN Users u ON t.userID = u.userID
+            JOIN Services s ON t.serviceID = s.serviceID
+            LEFT JOIN SubServices ss ON t.subserviceID = ss.subserviceID
+            WHERE t.businessID = ?";
+    
+    $stmt = $conn->prepare($sql);
+    if ($stmt) {
+        $stmt->bind_param("i", $businessID);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $salesHistory = [];
+        while ($row = $result->fetch_assoc()) {
+            $salesHistory[] = $row;
+        }
+        $stmt->close();
+        return $salesHistory;
+    } else {
+        error_log("Error preparing sales history statement: " . $conn->error);
+        return [];
+    }
+}
+
+//functions for analytics table in sales_history.php
+function getTopCustomers($conn, $businessID) {
+    $sql = "SELECT u.firstName, u.lastName, u.userID, 
+                   SUM(ss.cost) AS total_spent, 
+                   COUNT(t.transactionID) AS num_purchases
+            FROM Transactions t
+            JOIN Users u ON t.userID = u.userID
+            LEFT JOIN SubServices ss ON t.subserviceID = ss.subserviceID
+            WHERE t.businessID = ?
+            GROUP BY u.userID
+            ORDER BY total_spent DESC, num_purchases DESC
+            LIMIT 10";
+    
+    $stmt = $conn->prepare($sql);
+    if ($stmt) {
+        $stmt->bind_param("i", $businessID);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $topCustomers = [];
+        while ($row = $result->fetch_assoc()) {
+            $topCustomers[] = $row;
+        }
+        $stmt->close();
+        return $topCustomers;
+    } else {
+        error_log("Error preparing top customers query: " . $conn->error);
+        return [];
+    }
+}
+
+function getTopSellingServices($conn, $businessID) {
+    $sql = "SELECT s.serviceName, s.serviceID, 
+                   COUNT(t.transactionID) AS num_sold
+            FROM Transactions t
+            JOIN Services s ON t.serviceID = s.serviceID
+            WHERE t.businessID = ?
+            GROUP BY s.serviceID
+            ORDER BY num_sold DESC
+            LIMIT 10";
+    
+    $stmt = $conn->prepare($sql);
+    if ($stmt) {
+        $stmt->bind_param("i", $businessID);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $topServices = [];
+        while ($row = $result->fetch_assoc()) {
+            $topServices[] = $row;
+        }
+        $stmt->close();
+        return $topServices;
+    } else {
+        error_log("Error preparing top services query: " . $conn->error);
+        return [];
+    }
+}
+
+function getTopSellingSubservices($conn, $businessID) {
+    $sql = "SELECT ss.subserviceName, ss.subserviceID, 
+                   COUNT(t.transactionID) AS num_sold
+            FROM Transactions t
+            JOIN SubServices ss ON t.subserviceID = ss.subserviceID
+            WHERE t.businessID = ?
+            GROUP BY ss.subserviceID
+            ORDER BY num_sold DESC
+            LIMIT 10";
+    
+    $stmt = $conn->prepare($sql);
+    if ($stmt) {
+        $stmt->bind_param("i", $businessID);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $topSubservices = [];
+        while ($row = $result->fetch_assoc()) {
+            $topSubservices[] = $row;
+        }
+        $stmt->close();
+        return $topSubservices;
+    } else {
+        error_log("Error preparing top subservices query: " . $conn->error);
+        return [];
+    }
+}
+
 ?>
