@@ -29,6 +29,7 @@ if (isset($_POST['newPassword'])) {
             font-family: sans-serif;
             margin: 0;
             padding: 0;
+            background: rgb(17, 130, 235);
         }
 
         header {
@@ -74,7 +75,7 @@ if (isset($_POST['newPassword'])) {
 
         .sidebar a {
             display: block;
-            background-color: #555;
+            background-color: #333;
             color: white;
             text-decoration: none;
             padding: 10px;
@@ -87,7 +88,10 @@ if (isset($_POST['newPassword'])) {
         }
 
         .profile-info {
+            padding: 20px;
+            border-radius: 10px;
             flex-grow: 1;
+            background: white;
         }
 
         .profile-info div {
@@ -108,7 +112,7 @@ if (isset($_POST['newPassword'])) {
         }
 
         .profile-info button {
-            background-color: #007bff;
+            background-color: #333;
             color: white;
             border: none;
             padding: 8px 15px;
@@ -118,7 +122,7 @@ if (isset($_POST['newPassword'])) {
         }
 
         .profile-info button:hover {
-            background-color: #0056b3;
+            background-color: #333;
         }
     </style>
 </head>
@@ -126,7 +130,7 @@ if (isset($_POST['newPassword'])) {
     <header>
         <h1>SportzWorld Marketplace</h1>
         <nav>
-            <button onclick="location.href='login.php'">Logout</button>
+            <button onclick="location.href='homepage.php'">Logout</button>
             <button onclick="location.href='user_home.php'">Home</button>
             <button onclick="location.href='user_messages.php'">Messages</button>
             <button onclick="location.href='competitions.php'">Competitions</button>

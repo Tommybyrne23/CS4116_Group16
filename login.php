@@ -44,6 +44,7 @@ $conn->close();
             font-family: sans-serif;
             margin: 0;
             padding: 0;
+            background:rgb(255, 117, 37);
         }
 
         header {
@@ -64,6 +65,10 @@ $conn->close();
             display: flex;
             flex-direction: column;
             align-items: center;
+            background: white;
+            margin: 60px auto 0 auto;
+            max-width: 500px;
+            border-radius: 18px;
         }
 
         h1.service-page-heading {
@@ -144,7 +149,7 @@ $conn->close();
         </form>
 
         <div class="form-toggle">
-            <a href="user_signup.php">Don't have an account? Sign up</a>
+            <a href="homepage.php">Don't have an account? Sign up!</a>
         </div>
     </div>
 </body>

@@ -30,6 +30,7 @@ if ($keyword) {
             font-family: sans-serif;
             margin: 0;
             padding: 0;
+            background: rgb(17, 130, 235);
         }
 
         header {
@@ -58,7 +59,7 @@ if ($keyword) {
             display: flex;
             align-items: center;
             padding: 10px;
-            background-color: #f0f0f0; /* Optional: Add background color */
+            background-color: #333; /* Optional: Add background color */
         }
 
         .search-bar input[type="text"] {
@@ -79,7 +80,7 @@ if ($keyword) {
         .business_listings {
             padding: 20px;
             display: grid;
-            grid-template-columns: repeat(5, 1fr); /* 5 columns for 10 businesses */
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 20px;
         }
 
@@ -88,12 +89,18 @@ if ($keyword) {
             border: 1px solid #ddd;
             padding: 10px;
             cursor: pointer;
+            background: rgb(255,255,255);
+            border-radius: 12px;
+            max-width: 270px;
         }
 
         .business-container img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 10px;
+            width: 100%;    
+            max-width: 250px;     
+            height: 180px;      
+            object-fit: cover;    /* Crop image to fill box, keeping aspect ratio */
+            border-radius: 8px;   
+            background: #eee;     /* Optional: fallback bg for transparent images */
         }
 
         .business-container button {
@@ -112,7 +119,7 @@ if ($keyword) {
     <header>
         <h1>SportzWorld Marketplace</h1>
         <nav>
-            <button onclick="location.href='login.php'">Logout</button>
+            <button onclick="location.href='homepage.php'">Logout</button>
             <button onclick="location.href='user_messages.php'">Messages</button>
             <button onclick="location.href='competitions.php'">Competitions</button>
             <button onclick="location.href='user_info.php'">User Info</button>

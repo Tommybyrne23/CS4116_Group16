@@ -167,7 +167,7 @@ $conn->close();
     <header>
         <h1>SportzWorld Marketplace- Admin</h1>
         <nav>
-            <button onclick="location.href='login.php'">Logout</button> 
+            <button onclick="location.href='homepage.php'">Logout</button> 
             <button onclick="location.href='competition_list.php'">Competition Management</button>
         </nav>
     </header>

@@ -30,6 +30,7 @@ if ($keyword) {
         font-family: sans-serif;
         margin: 0;
         padding: 0;
+        background: rgb(17, 130, 235)
         }
 
         header {
@@ -58,7 +59,7 @@ if ($keyword) {
             display: flex;
             align-items: center;
             padding: 10px;
-            background-color: #f0f0f0;
+            background-color: #333;
         }
 
         .search-bar input[type="text"] {
@@ -82,6 +83,7 @@ if ($keyword) {
 
         h1.service-page-heading {
             text-align: center;
+            color: rgb(255,255,255);
         }
 
         .upcoming-competitions, .past-competitions {
@@ -160,7 +162,7 @@ if ($keyword) {
     <header>
         <h1>SportzWorld Marketplace</h1>
         <nav>
-            <button onclick="location.href='login.php'">Logout</button>
+            <button onclick="location.href='homepage.php'">Logout</button>
             <button onclick="location.href='user_home.php'">Home</button>
             <button onclick="location.href='user_messages.php'">Messages</button>
             <button onclick="location.href='competitions.php'">Competitions</button>

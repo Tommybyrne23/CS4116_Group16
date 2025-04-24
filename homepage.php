@@ -18,7 +18,7 @@
                 <p class="option-desc">Create your personal account to explore our services, manage your profile, and reach top-rated businesses.</p>
             </div>
             <div class="option-card">
-                <a href="businessSignup.php" class="option-btn btn-business">Sign Up as Business</a>
+                <a href="business_Signup.php" class="option-btn btn-business">Sign Up as Business</a>
                 <p class="option-desc">Register your business here to offer services, manage bookings, and contact new customers in the SportzWorld community.</p>
             </div>
             <div class="option-card">

@@ -132,7 +132,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h1>SportzWorld Marketplace</h1>
 
         <nav>
-            <button onclick="location.href='login.php'">Logout</button> 
+            <button onclick="location.href='homepage.php'">Logout</button> 
             <button onclick="location.href='business_home.php'">Home</button>
             <button onclick="location.href='business_messages.php'">Messages</button>
             <button onclick="location.href='business_profile.php'">Business Profile</button>

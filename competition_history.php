@@ -24,6 +24,7 @@ $firstName = getFirstName($conn);
             font-family: sans-serif;
             margin: 0;
             padding: 0;
+            background: rgb(17, 130, 235);
         }
 
         header {
@@ -69,7 +70,7 @@ $firstName = getFirstName($conn);
 
         .sidebar a {
             display: block;
-            background-color: #555;
+            background-color: #333;
             color: white;
             text-decoration: none;
             padding: 10px;
@@ -83,6 +84,9 @@ $firstName = getFirstName($conn);
 
         .competition-history {
             flex-grow: 1;
+            background: rgb(255,255,255);
+            padding: 20px;
+            border-radius: 10px;
         }
 
         .competition-history h2 {
@@ -110,7 +114,7 @@ $firstName = getFirstName($conn);
     <header>
         <h1>SportzWorld Marketplace</h1>
         <nav>
-            <button onclick="location.href='login.php'">Logout</button>
+            <button onclick="location.href='homepage.php'">Logout</button>
             <button onclick="location.href='user_home.php'">Home</button>
             <button onclick="location.href='user_messages.php'">Messages</button>
             <button onclick="location.href='competitions.php'">Competitions</button>

@@ -108,7 +108,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { //the name/username will already be 
     <header>
         <h1>SportzWorld Marketplace</h1>
         <nav>
-            <button onclick="location.href='login.php'">Logout</button>
+            <button onclick="location.href='homepage.php'">Logout</button>
             <button onclick="location.href='user_home.php'">Home</button>
             <button onclick="location.href='user_messages.php'">Messages</button>
             <button onclick="location.href='user_info.php'">User Info</button>

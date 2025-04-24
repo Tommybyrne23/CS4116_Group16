@@ -32,6 +32,7 @@ if (isset($_POST['newPassword'])) {
             font-family: sans-serif;
             margin: 0;
             padding: 0;
+            background: #2e8b57;
         }
 
         header {
@@ -77,7 +78,7 @@ if (isset($_POST['newPassword'])) {
 
         .sidebar a {
             display: block;
-            background-color: #555;
+            background-color: #333;
             color: white;
             text-decoration: none;
             padding: 10px;
@@ -129,7 +130,7 @@ if (isset($_POST['newPassword'])) {
     <header>
         <h1>SportzWorld Marketplace</h1>
         <nav>
-            <button onclick="location.href='login.php'">Logout</button>
+            <button onclick="location.href='homepage.php'">Logout</button>
             <button onclick="location.href='business_home.php'">Home</button>
             <button onclick="location.href='business_messages.php'">Messages</button>
             <button onclick="location.href='inquiry_approval.php'">Inquiries</button>

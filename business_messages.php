@@ -24,6 +24,7 @@ $defaultUser = isset($_GET['user'])
             font-family: sans-serif;
             margin: 0;
             padding: 0;
+            background: #2e8b57;
         }
 
         header {
@@ -49,8 +50,12 @@ $defaultUser = isset($_GET['user'])
         }
 
         .main-content {
-            display: flex;
-            padding: 20px;
+            display: flex;          
+            max-width: 1200px;         
+            margin: 40px auto;        
+            background: white;         
+            border-radius: 10px;       
+            padding: 32px 24px 32px 24px;
         }
 
         .sidebar {
@@ -75,7 +80,7 @@ $defaultUser = isset($_GET['user'])
 
         .sidebar a {
             display: block;
-            background-color: #555;
+            background-color: #333;
             color: white;
             text-decoration: none;
             padding: 10px;
@@ -107,7 +112,7 @@ $defaultUser = isset($_GET['user'])
     <header>
         <h1>SportzWorld Marketplace</h1>
         <nav>
-            <button onclick="location.href='login.php'">Logout</button> 
+            <button onclick="location.href='homepage.php'">Logout</button> 
             <button onclick="location.href='business_messages.php'">Messages</button>
             <button onclick="location.href='inquiry_approval.php'">Inquiries</button>
             <button onclick="location.href='business_profile.php'">Business Profile</button>

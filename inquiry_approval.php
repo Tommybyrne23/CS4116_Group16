@@ -51,6 +51,7 @@ $conn->close();
             font-family: sans-serif;
             margin: 0;
             padding: 0;
+            background: #2e8b57;
         }
 
         header {
@@ -76,8 +77,11 @@ $conn->close();
         }
 
         .main-content {
-            display: flex;
-            padding: 20px;
+            max-width: 1200px;         
+            margin: 40px auto;        
+            background: white;         
+            border-radius: 10px;       
+            padding: 32px 24px 32px 24px;
         }
 
         .section {
@@ -118,7 +122,7 @@ $conn->close();
         }
 
         .approve-button {
-            background-color: green;
+            background-color:  #2e8b57;
             color: white;
             border: none;
             padding: 8px 15px;
@@ -153,7 +157,7 @@ $conn->close();
     <header>
         <h1>SportzWorld Marketplace</h1>
         <nav>
-            <button onclick="location.href='login.php'">Logout</button> 
+            <button onclick="location.href='homepage.php'">Logout</button> 
             <button onclick="location.href='business_messages.php'">Messages</button>
             <button onclick="location.href='business_profile.php'">Business Profile</button> 
         </nav>

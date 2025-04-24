@@ -4,10 +4,10 @@
 Creates a connection to the server.
 */
 function connectToDatabase() {
-    $servername = "sql107.infinityfree.com";
-    $dbusername = "if0_38519522";
-    $dbpassword = "qAsQuSfBci";
-    $dbname = "if0_38519522_SportzMarketplace";
+    $servername = "localhost"; //server name
+    $dbusername = "root";        //database username
+    $dbpassword = "";            //database password
+    $dbname = "sportzworldmarketplace";  //database name
 
     $conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
 
@@ -331,7 +331,7 @@ function logout(){
     session_unset();  // Unset all session variables
     session_destroy(); // Destroy the session
 
-    header("Location: login.php"); // Redirect to login page
+    header("Location: homepage.php"); // Redirect to  homepage
     exit;
 }
 

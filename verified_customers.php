@@ -112,7 +112,7 @@ $customers = getCustomers($conn, $businessID);
     <header>
         <h1>SportzWorld Marketplace</h1>
         <nav>
-            <button onclick="location.href='login.php'">Logout</button>
+            <button onclick="location.href='homepage.php'">Logout</button>
             <button onclick="location.href='business_home.php'">Home</button>
             <button onclick="location.href='business_messages.php'">Messages</button>
         </nav>

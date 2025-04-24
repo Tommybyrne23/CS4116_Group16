@@ -42,6 +42,7 @@ if (isset($_POST['delete_subservice'])) {
             font-family: sans-serif;
             margin: 0;
             padding: 0;
+            background: #2e8b57;
         }
 
         header {
@@ -72,7 +73,11 @@ if (isset($_POST['delete_subservice'])) {
         }
 
         .main-content {
-            padding: 20px;
+            max-width: 1200px;         
+            margin: 40px auto;        
+            background: white;         
+            border-radius: 10px;       
+            padding: 32px 24px 32px 24px;
         }
 
         .main-content h1 {
@@ -101,7 +106,7 @@ if (isset($_POST['delete_subservice'])) {
         }
 
         .add-button {
-            background-color: #28a745;
+            background-color:  #2e8b57;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -112,7 +117,7 @@ if (isset($_POST['delete_subservice'])) {
         }
 
         .add-button:hover {
-            background-color: #218838;
+            background-color:  #2e8b57;
         }
 
         .delete-button {
@@ -135,7 +140,7 @@ if (isset($_POST['delete_subservice'])) {
     <header>
         <h1>SportzWorld Marketplace</h1>
         <nav>
-            <button onclick="location.href='login.php'">Logout</button> 
+            <button onclick="location.href='homepage.php'">Logout</button> 
             <button onclick="location.href='business_messages.php'">Messages</button>
             <button onclick="location.href='inquiry_approval.php'">Inquiries</button>
             <button onclick="location.href='business_profile.php'">Business Profile</button> 

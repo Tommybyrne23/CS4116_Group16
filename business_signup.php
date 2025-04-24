@@ -56,6 +56,7 @@ $conn->close();
             font-family: sans-serif;
             margin: 0;
             padding: 0;
+            background: #2e8b57;
         }
 
         header {
@@ -76,6 +77,11 @@ $conn->close();
             display: flex;
             flex-direction: column;
             align-items: center;
+            background: white;
+            margin: 20px auto 0 auto;
+            max-width: 500px;
+            border-radius: 18px;
+
         }
 
         h1.service-page-heading {
