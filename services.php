@@ -43,6 +43,7 @@ if (isset($_POST['selectedService'])) {
             font-family: sans-serif;
             margin: 0;
             padding: 0;
+            background: rgb(17, 130, 235);
         }
 
         header {
@@ -91,28 +92,37 @@ if (isset($_POST['selectedService'])) {
         }
 
         .service_listings {
-            padding: 20px;
             display: grid;
-            grid-template-columns: repeat(5, 1fr); /* 5 columns for 10 businesses */
-            gap: 20px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 0;
+            grid-auto-rows: 1fr;
         }
 
         .service-container {
+            background: white;
+            border-radius: 12px;
             text-align: center;
-            border: 1px solid #ddd;
-            padding: 10px;
-            cursor: pointer;
+            padding: 24px 16px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;           /* This is critical: fills the grid row */
+            min-height: 300px;      /* Optional: ensures a minimum size */
+            box-sizing: border-box;
         }
 
+
         .service-container button {
-            background-color: #007bff;
+            background-color: rgb(17, 130, 235);
             color: white;
             border: none;
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
             border-radius: 5px;
-            transition: background-color 0.3s ease;
+            margin-top:auto;
         }
     </style>
 </head>
@@ -141,6 +151,9 @@ if (isset($_POST['selectedService'])) {
         </form>
     </div>
 
+    <h1 style="text-align:center; color:white; margin-top:30px; margin-bottom:10px;">
+        <?php echo htmlspecialchars($businessUsername); ?>'s Services
+    </h1>
     <div class="service_listings">
         <?php
             if (is_array($services) && !empty($services)) {

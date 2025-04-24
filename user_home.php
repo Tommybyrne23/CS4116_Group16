@@ -59,7 +59,7 @@ if ($keyword) {
             display: flex;
             align-items: center;
             padding: 10px;
-            background-color: #333; /* Optional: Add background color */
+            background-color: #f0f0f0;
         }
 
         .search-bar input[type="text"] {

@@ -65,6 +65,7 @@ $conn->close();
             font-family: sans-serif;
             margin: 0;
             padding: 0;
+            background:rgb(255, 117, 37);
         }
 
         header {
@@ -81,8 +82,11 @@ $conn->close();
         }
 
         .main-content {
-            display: flex;
-            padding: 20px;
+            max-width: 1200px;         
+            margin: 40px auto;        
+            background: white;         
+            border-radius: 10px;       
+            padding: 32px 24px 32px 24px;
         }
 
         .section {
@@ -196,6 +200,9 @@ $conn->close();
                     <?php endforeach; ?>
                 </tbody>
             </table>
+            
+            <h1 class="admin-page-heading">Banned Users</h1>
+
             <table>
                 <thead>
                     <tr>

@@ -1,7 +1,7 @@
 <?php
 require_once 'functions.php';
 session_start();
-isLoggedIn();
+
 $conn = connectToDatabase();
 
 //This is the login page.

@@ -21,8 +21,8 @@ $cost = getCost($conn, $subserviceID);
 
 if (isset($_POST['submitTransaction'])) {
     if (completeTransaction($conn, $userID, $businessID, $serviceID, $subserviceID, $cost)) {
-        echo "Transaction completed successfully!";
-        // header("Location: transaction_history.php");
+         header("Location: transaction_history.php");
+         exit;
     } else {
         echo "Transaction failed.";
     }
@@ -38,6 +38,7 @@ if (isset($_POST['submitTransaction'])) {
             font-family: sans-serif;
             margin: 0;
             padding: 0;
+            background: rgb(17, 130, 235);
         }
 
         header {
@@ -64,6 +65,13 @@ if (isset($_POST['submitTransaction'])) {
 
         .main-content {
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: white;
+            margin: 20px auto 0 auto;
+            max-width: 500px;
+            border-radius: 18px;
         }
 
         h1.subservice-page-heading {

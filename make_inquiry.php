@@ -45,6 +45,7 @@ if (isset($_POST['submitInquiry'])) {
             font-family: sans-serif;
             margin: 0;
             padding: 0;
+            background: rgb(17, 130, 235);
         }
 
         header {
@@ -71,6 +72,13 @@ if (isset($_POST['submitInquiry'])) {
 
         .main-content {
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: white;
+            margin: 20px auto 0 auto;
+            max-width: 500px;
+            border-radius: 18px;
         }
 
         h1.inquiry-page-heading {

@@ -42,6 +42,7 @@ if (isset($_POST['delete_competition'])) {
         font-family: sans-serif;
         margin: 0;
         padding: 0;
+        background:rgb(255, 117, 37);
         }
 
         header {
