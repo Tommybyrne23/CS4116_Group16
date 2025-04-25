@@ -7,7 +7,8 @@ isLoggedIn();
 $conn = connectToDatabase();
 
 $sender = 'user';
-$businesses = getAllBusinesses($conn); // Assumes this returns array of businesses
+$userID = getUserID($conn);
+$businesses = getAvailableBusinessesToMessage($conn, $userID); // Assumes this returns array of businesses
 
 $defaultBusiness = isset($_GET['business']) 
     ? $_GET['business'] 
@@ -20,10 +21,11 @@ $defaultBusiness = isset($_GET['business'])
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SportzWorld - Message Businesses</title>
     <style>
-        body {
+        html, body {
             font-family: sans-serif;
             margin: 0;
             padding: 0;
+            height: 100%;
         }
 
         header {
@@ -51,6 +53,7 @@ $defaultBusiness = isset($_GET['business'])
         .main-content {
             display: flex;
             padding: 20px;
+            height: calc(100vh - 60px);
         }
 
         .sidebar {
@@ -111,6 +114,7 @@ $defaultBusiness = isset($_GET['business'])
             <button onclick="location.href='user_home.php'">Home</button>
             <button onclick="location.href='user_messages.php'">Messages</button>
             <button onclick="location.href='competitions.php'">Competitions</button>
+            <button onclick="location.href='reviews.php'">Reviews</button>
             <button onclick="location.href='user_info.php'">User Info</button>
         </nav>
     </header>
@@ -131,7 +135,7 @@ $defaultBusiness = isset($_GET['business'])
                         </li>
                     <?php endforeach; ?>
                 <?php else: ?>
-                    <li>No businesses found.</li>
+                    <li>Must make inquiry to message business.</li>
                 <?php endif; ?>
             </ul>
         </div>
