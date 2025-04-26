@@ -1,6 +1,4 @@
 <?php
-//maybe make the first business in the list the default page, then send all others to same page w/business assigned
-//sender will always be user on this page
 require_once 'functions.php';
 session_start();
 isLoggedIn();
@@ -26,6 +24,7 @@ $defaultBusiness = isset($_GET['business'])
             margin: 0;
             padding: 0;
             height: 100%;
+            background:rgb(17, 130, 235);
         }
 
         header {
@@ -39,6 +38,10 @@ $defaultBusiness = isset($_GET['business'])
 
         header h1 {
             margin: 0;
+        }
+
+        h2{
+            color:white;
         }
 
         nav button {
@@ -78,7 +81,7 @@ $defaultBusiness = isset($_GET['business'])
 
         .sidebar a {
             display: block;
-            background-color: #555;
+            background-color: #333;
             color: white;
             text-decoration: none;
             padding: 10px;
@@ -103,6 +106,7 @@ $defaultBusiness = isset($_GET['business'])
             border: none;
             width: 100%;
             height: 100%;
+            border-radius:10px;
         }
     </style>
 </head>
