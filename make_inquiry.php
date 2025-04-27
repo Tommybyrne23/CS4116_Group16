@@ -1,9 +1,4 @@
 <?php
-//make inquiry page
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 require_once 'functions.php';
 session_start();
 isLoggedIn();
@@ -26,7 +21,7 @@ if (isset($_POST['submitInquiry'])) {
     header("Location: make_inquiry.php?submitted=true"); // Redirect
     $message = $_POST['message'];
     $proposedPrice = $_POST['proposedPrice'];
-    if (sendInquiry($conn, $userID, $businessID, $serviceID, $subserviceID, $message, $proposedPrice)) { //. CREATE sendInquiry() function
+    if (sendInquiry($conn, $userID, $businessID, $serviceID, $subserviceID, $message, $proposedPrice)) {
         $successMessage = "Inquiry successfully submitted.";
         $_POST['message'] = '';
         $_POST['proposedPrice'] = '';
@@ -142,6 +137,7 @@ if (isset($_POST['submitInquiry'])) {
             <button onclick="location.href='user_messages.php'">Messages</button>
             <button onclick="location.href='user_inquiries.php'">Inquiries</button>
             <button onclick="location.href='competitions.php'">Competitions</button>
+            <button onclick="location.href='reviews.php'">Reviews</button>
             <button onclick="location.href='user_info.php'">User Info</button>
         </nav>
     </header>
@@ -157,7 +153,7 @@ if (isset($_POST['submitInquiry'])) {
             <input type="text" id="username" name="username" value="<?php echo htmlspecialchars($username); ?>" readonly>
 
             <label for="cardNumber">Card Number:</label>
-            <input type="number" id="cardNumber" name="cardNumber" required> 
+            <input type="text" id="cardNumber" name="cardNumber" required pattern="\d{16}" maxlength="16" minlength="16" title="Please enter a valid card number contatining 16 digits">
 
             <label for="business">Business:</label>
             <input type="text" id="business" name="business" value="<?php echo htmlspecialchars($business); ?>" readonly>
@@ -172,7 +168,7 @@ if (isset($_POST['submitInquiry'])) {
             <input type="number" id="normalPrice" name="normalPrice" value="<?php echo $cost; ?>" readonly>
 
             <label for="proposedPrice">Proposed Price:</label>
-            <input type="number" step="0.01" id="proposedPrice" name="proposedPrice" required>
+            <input type="number" step="0.01" id="proposedPrice" name="proposedPrice" min="0" required>
 
             <label for="message">Message:</label>
             <input type="text" id="message" name="message" required>
