@@ -16,10 +16,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $subserviceID = getSubserviceID($conn, $serviceID, trim($_POST["subserviceName"]));
     $rating = $_POST["rating"];
     $comment = $_POST["comment"];
-
+    
     // Validate input (add more validation as needed)
     if (empty($userID) || empty($businessID) || empty($serviceID) || empty($subserviceID) || empty($rating) || empty($comment)) {
-        $errorMessage = "All fields are required.";
+        $errorMessage = "Failed to leave review. Please ensure all fields are filled correctly.";
     } else {
         if(leaveReview($conn, $userID, $businessID, $serviceID, $subserviceID, $rating, $comment)){
             $successMessage = "Review successfully submitted.";
@@ -150,7 +150,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h1 class="review-page-heading" id="formTitle">Leave a Review</h1>
 
         <form class="user-form" id="userForm" method="post">
-            <div class="error"><?php echo $errorMessage; ?></div>
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" value="<?php echo htmlspecialchars($username); ?>" readonly>
 
@@ -164,12 +163,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="text" id="subserviceName" name="subserviceName" required>
 
             <label for="rating">Rating (1-5 Stars):</label>
-            <input type="number" id="rating" name="rating" required>
+            <input type="number" id="rating" name="rating" min="1" max="5" required>
 
             <label for="comment">Comment:</label>
             <input type="text" id="comment" name="comment" required>
 
             <button type="submit">Submit</button>
+            <?php if (!empty($successMessage)): ?>
+        <div class="success" style="color:green; margin-top:10px;"><?php echo $successMessage; ?></div>
+    <?php endif; ?>
+    <?php if (!empty($errorMessage)): ?>
+        <div class="error" style="color:red; margin-top:10px;"><?php echo $errorMessage; ?></div>
+    <?php endif; ?>
         </form>
     </div>
 </body>
