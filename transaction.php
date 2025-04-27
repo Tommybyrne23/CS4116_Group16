@@ -1,9 +1,4 @@
 <?php
-
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 require_once 'functions.php';
 session_start();
 isLoggedIn();
@@ -21,8 +16,8 @@ $cost = getCost($conn, $subserviceID);
 
 if (isset($_POST['submitTransaction'])) {
     if (completeTransaction($conn, $userID, $businessID, $serviceID, $subserviceID, $cost)) {
-         header("Location: transaction_history.php");
-         exit;
+        echo "Transaction completed successfully!";
+        // header("Location: transaction_history.php");
     } else {
         echo "Transaction failed.";
     }
@@ -146,6 +141,7 @@ if (isset($_POST['submitTransaction'])) {
             <button onclick="location.href='user_home.php'">Home</button>
             <button onclick="location.href='user_messages.php'">Messages</button>
             <button onclick="location.href='competitions.php'">Competitions</button>
+            <button onclick="location.href='reviews.php'">Reviews</button>
             <button onclick="location.href='user_info.php'">User Info</button>
         </nav>
     </header>
@@ -160,7 +156,7 @@ if (isset($_POST['submitTransaction'])) {
             <input type="text" id="username" name="username" value="<?php echo htmlspecialchars($username); ?>" readonly>
 
             <label for="cardNumber">Card Number:</label>
-            <input type="number" id="cardNumber" name="cardNumber" required> 
+            <input type="text" id="cardNumber" name="cardNumber" required pattern="\d{16}" maxlength="16" minlength="16" title="Please enter a valid card number contatining 16 digits">
 
             <label for="business">Business:</label>
             <input type="text" id="business" name="business" value="<?php echo htmlspecialchars($business); ?>" readonly>
