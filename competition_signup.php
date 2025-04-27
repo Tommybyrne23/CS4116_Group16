@@ -10,10 +10,11 @@ $lastName = getLastName($conn);
 
 $upcomingComps = getUpcomingCompetitions($conn);
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") { //the name/username will already be listed in the box for signup cuz user is logged in... only submits the compname
+$successMessage = "";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $compName = $_POST["compName"];
     signupForComp($conn, $compName);
-    echo "Successfully registered for " . htmlspecialchars($compName);
+    $successMessage = "Successfully registered for " . htmlspecialchars($compName) . ".";
 }
 
 
@@ -119,6 +120,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { //the name/username will already be 
             <button onclick="location.href='homepage.php'">Logout</button>
             <button onclick="location.href='user_home.php'">Home</button>
             <button onclick="location.href='user_messages.php'">Messages</button>
+            <button onclick="location.href='competitions.php'">Competitions</button>
             <button onclick="location.href='user_info.php'">User Info</button>
         </nav>
     </header>
@@ -156,6 +158,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { //the name/username will already be 
                 <button type="submit">Sign Up</button>
             </div>
         </form>
+        <?php if (!empty($successMessage)): ?>
+            <div class="success" style="color: green; margin-top: 10px;"><?php echo $successMessage; ?></div>
+        <?php endif; ?>
     </div>
 </body>
 </html>
