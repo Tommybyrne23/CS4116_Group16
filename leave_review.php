@@ -1,8 +1,4 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 require_once 'functions.php';
 session_start();
 isLoggedIn();
@@ -44,6 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             font-family: sans-serif;
             margin: 0;
             padding: 0;
+            background: rgb(17, 130, 235);
         }
 
         header {
@@ -73,6 +70,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             display: flex;
             flex-direction: column;
             align-items: center;
+            background: rgb(255, 255, 255);
+            margin: 60px auto 0 auto;
+            max-width: 600px;
+            border-radius: 18px;
         }
 
         h1.review-page-heading {
@@ -140,6 +141,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <button onclick="location.href='user_home.php'">Home</button>
             <button onclick="location.href='user_messages.php'">Messages</button>
             <button onclick="location.href='competitions.php'">Competitions</button>
+            <button onclick="location.href='reviews.php'">Reviews</button>
             <button onclick="location.href='user_info.php'">User Info</button>
         </nav>
     </header>
